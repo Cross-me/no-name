@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/join.css">
+<script>
+function check(){
+  var user=document.getElementById("user");
+  if(user.value==""){
+	alert("请输入用户名！");
+	document.myform.user.focus();
+	return false;
+  }
+  
+  var password1=document.getElementById("password1");
+  if(password1.value==""){
+	alert("请输入密码！");
+	document.myform.user.focus();
+	return false;
+  }
+  
+  var password2=document.getElementById("password2");
+  if(password2.value==""){
+	alert("请确认密码！");
+	document.myform.user.focus();
+	return false;
+  }
+  
+  var password1 = document.getElementById("password1").value;
+  var password2 = document.getElementById("password2").value;
+  if(password1 == password2){
+	  //document.getElementById("tishi").innerHTML="<font color='green'>两次密码相同</font>";
+	  alert("注册成功!")
+	  //document.getElementById("submit").disabled = false;
+	  window.setTimeout("window.location='login.html'",1000);
+  }
+  else {
+	  //document.getElementById("tishi").innerHTML="<font color='red'>两次密码不相同</font>";
+	  alert("输入的两次密码不一致!")
+	  //document.getElementById("submit").disabled = true;
+  }
+}
+</script>
+</head>
+<body>
+<div id="top">
+	<div id="top_img">
+		<main id="top_main">
+			<div id="top_logo"><a href="index.html"><img src="image/logo.png"></a></div>
+			<div id="top_title"><img id="top_title01" alt="" src="image/mingzi.png">
+            <hr class="top_hr_style01">
+				<ul id="top_navlist">
+					<a class="top_nav1"><img src="image/zh.png" /><input type="text" placeholder="请填写用户名" maxlength="15" id="user"/></</a>
+					<a class="top_nav1"><img src="image/mm.png" /><input type="password" placeholder="请填写用户密码" maxlength="20" id="password1" name="password1"/></a>
+                    <a class="top_nav1"><img src="image/mm.png" /><input type="password" placeholder="请确认用户密码" maxlength="20" id="password2" name="password2"/></a>
+                    <span id="tishi"></span>
+					<a class="top_nav"><li></li></a>
+                    <a class="top_nav"><button onClick="check()">注 册</button></a>
+					<a class="top_nav"><li><font></font></li></a>
+				</ul>
+		</main>
+		<footer id="top_footer">
+			<span id="top_copyright">
+				<hr class="top_hr_style02">
+                <font>
+                	<font>版权©2019</font>
+                </font>
+			</span>
+		</footer>
+    </div>
+</div>
+</body>
+</html>
